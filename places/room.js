@@ -4,6 +4,8 @@ var EventEmitter = require('events').EventEmitter;
 module.exports = function Room (cb) {
     var room = new EventEmitter;
     room.players = {};
+    room.commands = {};
+    room.artifacts = {};
     room.description = '';
     
     return function (player) {
@@ -11,6 +13,11 @@ module.exports = function Room (cb) {
         room.players[player.id] = player;
         
         var pr = {};
+        
+        pr.enter = function (place) {
+            place(player);
+        }; 
+        
         pr.show = function (params) {
             Hash.update(r, params || {});
             
@@ -22,7 +29,7 @@ module.exports = function Room (cb) {
                 ),
                 exits : Hash.map(
                     r.exits,
-                    function (ex) { return ex.bind(ex, player) }
+                    function (ex) { return pr.enter.bind(pr, ex) }
                 )
             });
         };

@@ -13,6 +13,10 @@ var server = DNode(function (client, conn) {
             name : name,
             emit : emit,
             role : client.role,
+            stats : {
+                hactivity : { level : 5, capacity : 5 },
+                health : { level : 5, capacity : 5 },
+            },
         };
         
         cafe.seating(player);

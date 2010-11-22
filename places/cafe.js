@@ -59,8 +59,13 @@ cafe.computers = Room(function (player, room) {
         nw : cafe.counter,
     };
     room.description = 'Ahead of you sit some computers along a narrow wooden'
-        ' table placed rather highly upon on the wall. Barstools '
+        + ' table placed rather highly upon on the wall. Barstools '
     ;
+    room.artifacts = {
+        computer : {
+            
+        }
+    };
     
     room.show();
 });

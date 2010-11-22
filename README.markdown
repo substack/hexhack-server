@@ -11,6 +11,7 @@ Gameplay
 ========
 
 Enemies are defeated by some combination of
+
 * solving a riddle
 * cracking a secret key
 * analyzing some source code

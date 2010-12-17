@@ -24,7 +24,11 @@ var server = DNode(function (client, conn) {
         
         cafe.seating(player);
     };
-}).listen(7331).listen(web);
+}).listen(web);
+
+if (process.argv[3]) {
+    server.listen(parseInt(process.argv[3], 10));
+}
 
 server.on('localError', function (err) {
     console.error(err.stack ? err.stack : err);

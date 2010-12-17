@@ -3,6 +3,9 @@ html(lang='en')
   head
     title hexhack
     link(rel='StyleSheet', href='/site.css')
-    script(src='/client.js')
+    script(type='text/javascript', src='http://code.jquery.com/jquery-1.4.4.min.js')
+    script(type='text/javascript', src='/dnode.js')
+    script(type='text/javascript', src='/client.js')
+    script(type='text/javascript', src='/load.js')
   body
-    = body
+    #{body}

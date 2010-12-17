@@ -1,7 +1,10 @@
 #!/usr/bin/env node
-
 var DNode = require('dnode');
 var Hash = require('traverse/hash');
+
+var port = parseInt(process.argv[2], 10) || 80;
+var web = require('./web');
+web.listen(port);
 
 var cafe = require('./places/cafe');
 var players = {};
@@ -21,7 +24,7 @@ var server = DNode(function (client, conn) {
         
         cafe.seating(player);
     };
-}).listen(7331);
+}).listen(7331).listen(web);
 
 server.on('localError', function (err) {
     console.error(err.stack ? err.stack : err);

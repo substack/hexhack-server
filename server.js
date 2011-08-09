@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 var DNode = require('dnode');
-var Hash = require('traverse/hash');
+var Hash = require('hashish');
 
 var port = parseInt(process.argv[2], 10) || 80;
 var web = require('./web');

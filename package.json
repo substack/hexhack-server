@@ -11,7 +11,7 @@
     },
     "dependencies" : {
         "dnode" : ">=0.3.11",
-        "traverse" : ">=0.2.3",
+        "hashish" : ">=0.0.x",
         "express" : ">=1.0.0",
         "jade" : ">=0.5.7"
     },
